@@ -1,0 +1,136 @@
+{% include "enroll/layout/sidebar.html" %}
+ <!-- End of Sidebar -->
+{% include "enroll/layout/header.html" %}
+
+<body>
+
+    {% for n in adminsettings %}
+    
+        
+        <div class="content container-fluid" data-select2-id="345">
+        
+
+        <div style="padding: 10px;margin-bottom:30px;background: white;border-radius: 10px; text-align: left;" data-select2-id="344">
+            <h3>Web config Form</h3>
+            <form action="{% url 'updateadsettings' %}" method="POST" enctype="multipart/form-data" data-select2-id="343">
+                {% csrf_token %}
+                <input type="hidden" name="_token" value="TB4tvr9Us3vCSl72FiU04a5OStbM2kkWQ9Pi0dk7">                <div class="row" style="padding-bottom: 20px">
+                    
+                </div>
+
+                <div class="row" style="padding-bottom: 20px">
+                    <div class="col-md-4">
+                                                <div class="form-group">
+                            <label class="input-label">Company Name</label>
+                            <input class="form-control" type="text" name="compname" value="{{n.company_name}}" placeholder="New Business" fdprocessedid="rpdlmv">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                                                <div class="form-group">
+                            <label class="input-label">Company Email</label>
+                            <input class="form-control" type="text" name="compemail" value="{{n.company_email}}" placeholder="New Business" fdprocessedid="4htpjl">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                                                <div class="form-group">
+                            <label class="input-label">Phone</label>
+                            <input class="form-control" type="text" name="compphone" value="{{n.company_mobile}}"  placeholder="New Business" fdprocessedid="b0bgak">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row" style="padding-bottom: 20px">
+                    <div class="col-md-8">
+                                                <div class="form-group">
+                            <label class="input-label">Address</label>
+                            <input class="form-control" type="text" name="compadd" value="{{n.shopaddress}}" placeholder="New Business" fdprocessedid="rpdlmv">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                                                <div class="form-group">
+                            <label class="input-label">Copyright</label>
+                            <input class="form-control" type="text" name="copyright" value="{{n.copyright}}" placeholder="New Business" fdprocessedid="4htpjl">
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <div class="row" style="padding-bottom: 20px">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5>Company Logo </h5>
+                                <span class="badge badge-soft-danger">( 250x60 px )</span>
+                            </div>
+                            
+                            
+                            <center >
+                            <img src="/media/{{n.company_logo}}" id="profile-img-tag" width="200px" height="150px" style="margin-top:15px"/>
+                            </center>
+                            <!--<input type="file" name="image" placeholder="Image" id="profile-img" required="" />-->
+                           
+            <br>
+            
+                
+                <hr>
+                <div class="row pl-4 pr-4">
+                    <div class="col-12" style="text-align: left">
+                        <input type="file" name="image" id="profile-img" class="custom-file-input" accept=".jpg, .png, .jpeg, .gif, .bmp, .tif, .tiff|image/*">
+                                <label class="custom-file-label" for="profile-img">Choose File</label>
+                                </div>
+                                </div>
+                        </div>
+                    </div>
+                    
+                </div>
+
+                
+
+                <hr>
+                <button type="submit" class="btn btn-primary float-right " fdprocessedid="1jrnii">Submit</button>
+            </form>
+        </div>
+        
+    </div>
+                {% endfor %}
+
+
+
+
+
+
+
+
+<script src="/static/vendor/jquery/jquery.min.js"></script>
+<script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Core plugin JavaScript-->
+<script src="/static/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+<!-- Custom scripts for all pages-->
+<script src="/static/js/sb-admin-2.min.js"></script>
+
+<!-- Page level plugins -->
+<script src="/static/vendor/chart.js/Chart.min.js"></script>
+
+<!-- Page level custom scripts -->
+<script src="/static/js/demo/chart-area-demo.js"></script>
+<script src="/static/js/demo/chart-pie-demo.js"></script>
+<script type="text/javascript">
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            
+            reader.onload = function (e) {
+                $('#profile-img-tag').attr('src', e.target.result);
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    $("#profile-img").change(function(){
+        readURL(this);
+    });
+</script>
+
+</body>

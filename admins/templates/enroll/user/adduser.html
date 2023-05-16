@@ -1,0 +1,100 @@
+{% include "enroll/layout/sidebar.html" %}
+
+{% include "enroll/layout/header.html" %}
+<body class="bg-gradient-secondary">
+
+    <div class="container">
+
+        <div class="card o-hidden border-0 shadow-lg my-5">
+            <div class="card-body p-0">
+                <!-- Nested Row within Card Body -->
+                <div class="row">
+                    
+                    <div class="col-lg-12">
+                        <div class="p-5">
+                            <div class="text-center">
+                                <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
+                            </div>
+                            <form class="user" action="{% url 'saveuser' %}" method="post" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                {% if error %}
+                                <div class="alert alert-danger" role="alert">
+                                    {{error}}
+                                </div>
+                                {% endif %}
+                                <div class="form-group row">
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <label style="margin-left:10px;color:black;font-family: 'Arial Narrow Bold';font-size:20px;">Name:<span style="margin-left: 5px;color: red;margin-top: 200px;font-size: 15px;">*</span></label>
+                                        <input type="text" class="form-control form-control-user" id="exampleFirstName"
+                                            placeholder="Name" name="name" style="color:black;font-family: 'Arial Narrow Bold';font-size:20px;border: 1px solid black;">
+                                    </div>
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <label style="margin-left:10px;color:black;font-family: 'Arial Narrow Bold';font-size:20px;">Father Name:<span style="margin-left: 5px;color: red;margin-top: 200px;font-size: 15px;">*</span></label>
+                                        <input type="text" class="form-control form-control-user" id="exampleFirstName"
+                                            placeholder="Father Name" name="fathername" style="color:black;font-family: 'Arial Narrow Bold';font-size:20px;border: 1px solid black;">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <label style="margin-left:10px;color:black;font-family: 'Arial Narrow Bold';font-size:20px;">Email:<span style="margin-left: 5px;color: red;margin-top: 200px;font-size: 15px;">*</span></label>
+                                        <input type="text" class="form-control form-control-user" id="exampleFirstName"
+                                            placeholder="Email" name="email" style="color:black;font-family: 'Arial Narrow Bold';font-size:20px;border: 1px solid black;">
+                                    </div>
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <label style="margin-left:10px;color:black;font-family: 'Arial Narrow Bold';font-size:20px;">Mobile:<span style="margin-left: 5px;color: red;margin-top: 200px;font-size: 15px;">*</span></label>
+                                        <input type="text" class="form-control form-control-user" id="exampleFirstName"
+                                            placeholder="Mobile" name="phone" style="color:black;font-family: 'Arial Narrow Bold';font-size:20px;border: 1px solid black;">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <label style="margin-left:10px;color:black;font-family: 'Arial Narrow Bold';font-size:20px;">Password:<span style="margin-left: 5px;color: red;margin-top: 200px;font-size: 15px;">*</span></label>
+                                        <input type="text" class="form-control form-control-user" id="exampleFirstName"
+                                            placeholder="Password" name="password" style="color:black;font-family: 'Arial Narrow Bold';font-size:20px;border: 1px solid black;">
+                                    </div>
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <label style="margin-left:10px;color:black;font-family: 'Arial Narrow Bold';font-size:20px;">Aadhar:<span style="margin-left: 5px;color: red;margin-top: 200px;font-size: 15px;">*</span></label>
+                                        <input type="text" class="form-control form-control-user" id="exampleFirstName"
+                                            placeholder="Aadhar No." name="aadhar" style="color:black;font-family: 'Arial Narrow Bold';font-size:20px;border: 1px solid black;">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <label style="margin-left:10px;color:black;font-family: 'Arial Narrow Bold';font-size:20px;">Role:<span style="margin-left: 5px;color: red;margin-top: 200px;font-size: 15px;">*</span></label>
+                                        <select class="form-control" name="role" style="color:black;font-family: 'Arial Narrow Bold';font-size:20px;border: 1px solid black;">
+                                            <option>Select Role</option>
+                                            {% for n in abc %}
+                                            <option value="{{n.id}}">{{n.name}}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                    
+                                </div>
+                                <button class="btn btn-primary btn-user btn-block">
+                                    Submit
+                                </button>
+                                
+                            </form>
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="/static/vendor/jquery/jquery.min.js"></script>
+    <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="/static/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="/static/js/sb-admin-2.min.js"></script>
+    
+</body>
+
+</html>

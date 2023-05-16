@@ -1,0 +1,84 @@
+{% include "enroll/layout/sidebar.html" %}
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+{% include "enroll/layout/header.html" %}
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <h1 class="h3 mb-2 text-gray-800"></h1>
+                    
+                    <!-- DataTales Example -->
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h5 class="m-0 font-weight-bold text-primary">Crop List</h5>
+                            <a href="{% url 'cropadd'%}" style="margin-left: 90%;"><button class="btn btn-primary">Add</button></a>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>S No.</th>
+                                            <th>Name</th>
+                                            <th>Image</th>
+                                            <th>Status</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <th>S No.</th>
+                                            <th>Name</th>
+                                            <th>Image</th>
+                                            <th>Status</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+                                        {% for n in abc %}
+                                            <tr>
+                                                <td>{{forloop.counter}}</td>
+                                                <td>{{n.1}}</td>
+                                                {% if n.3 %}
+                                                    <td><img src="/media/{{n.3}}" height="100px" width="100px"></td>
+                                                {% else %}
+                                                    <td><img src="http://127.0.0.1:8000/media/users/WhatsApp_Image_2023-03-10_at_13.42.41.jpeg" height="100px" width="100px"></td>
+                                                {% endif %}
+                                                <td>{{n.2}}</td>
+                                                <td>
+                                                    <a href="#" class="btn btn-primary btn-circle">
+                                                        <i class="fas fa-pen"></i></a>&nbsp
+                                                    <a href="#" class="btn btn-danger btn-circle">
+                                                        <i class="fas fa-trash"></i>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+
+    <!-- Bootstrap core JavaScript-->
+
+ 
+{% include "enroll/layout/footer.html" %}   <!-- Page level plugins -->
+    <script src="/static/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="/static/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="/static/js/demo/datatables-demo.js"></script>
+

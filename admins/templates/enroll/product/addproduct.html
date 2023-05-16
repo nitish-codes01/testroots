@@ -1,0 +1,111 @@
+{% include "enroll/layout/sidebar.html" %}
+{% include "enroll/layout/header.html" %}
+<body class="bg-gradient-secondary">
+
+    <div class="container">
+
+        <div class="card o-hidden border-0 shadow-lg my-5">
+            <div class="card-body p-0">
+                <!-- Nested Row within Card Body -->
+                <div class="row">
+                    <!-- <div class="col-lg-5 d-none d-lg-block bg-register">
+                        
+                    </div> -->
+                    <div class="col-lg-12">
+                        <div class="p-5">
+                            <div class="text-center">
+                                <h1 class="h4 text-gray-900 mb-4">Add Product</h1>
+                            </div>
+                            <form class="user" action="{% url 'saveproduct' %}" method="post" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                {% if error %}
+                                <div class="alert alert-danger" role="alert">
+                                    {{error}}
+                                </div>
+                                {% endif %}
+                                <div class="form-group row">
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <lable style="margin-left: 15px;color:black;">Product Name:<span style="margin-left: 5px;color: red;margin-top: 200px;font-size: 15px;">*</span></lable><br>
+                                        <input type="text" class="form-control form-control-user" id="exampleFirstName"
+                                            placeholder="Product Name" name="name" style="color:black;font-family: 'Arial Narrow Bold';font-size:20px;border: 1px solid black;">
+                                    </div>
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <lable style="margin-left: 15px;color:black;">Product Price:<span style="margin-left: 5px;color: red;margin-top: 200px;font-size: 15px;">*</span></lable><br>
+                                        <input type="text" class="form-control form-control-user" id="exampleFirstName"
+                                            placeholder="Product Price" name="price" style="color:black;font-family: 'Arial Narrow Bold';font-size:20px;border: 1px solid black;">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <lable style="margin-left: 15px;color:black;">Product Quality:<span style="margin-left: 5px;color: red;margin-top: 200px;font-size: 15px;">*</span></lable><br>
+                                        <input type="text" class="form-control form-control-user" id="exampleFirstName"
+                                            placeholder="Product Quality" name="quality" style="color:black;font-family: 'Arial Narrow Bold';font-size:20px;border: 1px solid black;">
+                                    </div>
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <lable style="margin-left: 15px;color:black; ">Crop:<span style="margin-left: 5px;color: red;margin-top: 200px;font-size: 15px;">*</span></lable><br>
+                                        <select class="form-control" name="crop" style="color:black;font-family: 'Arial Narrow Bold';font-size:20px;border: 1px solid black;">
+                                            <option>Select Crop</option>
+                                            {% for n in crop %}
+                                                <option value="{{n.id}}">{{n.name}}</option>
+                                            {% endfor %}
+                                        </select>
+                                        
+                                    </div>
+                                    
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <lable style="margin-left: 15px;color:black;">Product Image:<span style="margin-left: 5px;color: red;margin-top: 200px;font-size: 15px;">*</span></lable><br>
+                                        <input class="form-control spartan_image_input" name="image" type="file" style="color:black;height:100px;border: 1px solid black;background-image:url('http://127.0.0.1:8000/media/crop/pearl-millet-204091_1920.jpg');background-size: cover;background-repeat:no-repeat;">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <lable style="margin-left: 15px;color:black; ">Users:<span style="margin-left: 5px;color: red;margin-top: 200px;font-size: 15px;">*</span></lable><br>
+                                        <select class="form-control" name="user" style="color:black;font-family: 'Arial Narrow Bold';font-size:20px;border: 1px solid black;">
+                                            <option>Select User</option>
+                                            {% for n in user %}
+                                                <option value="{{n.id}}">{{n.name}}</option>
+                                            {% endfor %}
+                                        </select>
+                                        
+                                    </div>
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <lable style="margin-left: 15px;color:black; ">Role:<span style="margin-left: 5px;color: red;margin-top: 200px;font-size: 15px;">*</span></lable><br>
+                                        <select class="form-control" name="role" style="color:black;font-family: 'Arial Narrow Bold';font-size:20px;border: 1px solid black;">
+                                            <option>Select Role</option>
+                                            {% for n in role %}
+                                                <option value="{{n.id}}">{{n.name}}</option>
+                                            {% endfor %}
+                                        </select>
+                                        
+                                    </div>
+                                </div>
+                                <button class="btn btn-primary btn-user btn-block">
+                                    Submit
+                                </button>
+                                
+                            </form>
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="/static/vendor/jquery/jquery.min.js"></script>
+    <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="/static/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="/static/js/sb-admin-2.min.js"></script>
+    
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+{% include "enroll/layout/sidebar.html" %}
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+{% include "enroll/layout/header.html" %}
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <h1 class="h3 mb-2 text-gray-800"></h1>
+                    
+                    <!-- DataTales Example -->
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h5 class="m-0 font-weight-bold text-primary" style="text-align:center;">Farmer Offer List</h5>
+                            <h5 class="m-0 font-weight-bold text-primary">{{username}}</h5>
+                            <h5 class="m-0 font-weight-bold text-primary">{{usermobile}}</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>S No.</th>
+                                            <th>Offer Date</th>
+                                            <th>Crop Name</th>
+                                            <th>Quantity</th>
+                                            <th>Price</th>
+                                            <th>Selling Date</th>
+                                            <th>Total Amount</th>
+                                            <th>Pickup Location</th>
+                                            <th>Offer Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <th>S No.</th>
+                                            <th>Offer Date</th>
+                                            <th>Crop Name</th>
+                                            <th>Quantity</th>
+                                            <th>Price</th>
+                                            <th>Selling Date</th>
+                                            <th>Total Amount</th>
+                                            <th>Pickup Location</th>
+                                            <th>Offer Status</th>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+                                        {% for n in abc %}
+                                            <tr>
+                                                <td>{{forloop.counter}}</td>
+                                                <td>{{n.1}}</td>
+                                                <td>{{n.9}}</td>
+                                                <td>{{n.3}}</td>
+                                                <td>{{n.4}}</td>
+                                                <td>{{n.id}}</td>
+                                                <td>{{n.8}}/Ton</td>
+                                                <td>{{n.5}}</td>
+                                                <td>{{statusdata}}</td>
+                                            </tr>
+                                            {% endfor%}
+                                        
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+
+    <!-- Bootstrap core JavaScript-->
+
+ 
+{% include "enroll/layout/footer.html" %}   <!-- Page level plugins -->
+    <script src="/static/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="/static/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="/static/js/demo/datatables-demo.js"></script>
+

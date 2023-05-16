@@ -1,0 +1,648 @@
+
+{% include "enroll/layout/sidebar.html" %}
+{% include "enroll/layout/header.html" %}
+<body class="footer-offset">
+<!-- Builder -->
+<!-- End Builder -->
+
+<div class="row">
+    <div class="col-12" style="margin-top:10rem;position: fixed;z-index: 9999;">
+        <div id="loading" style="display: none;">
+           
+        </div>
+    </div>
+</div>
+
+
+<!-- JS Preview mode only -->
+<div id="headerMain" class="d-none">
+    <header id="header" style="background-color: #9e1b1b"
+            class="navbar navbar-expand-lg navbar-fixed navbar-height navbar-flush navbar-container navbar-bordered">
+
+        <div class="navbar-nav-wrap">
+            <div class="navbar-brand-wrapper">
+                <!-- Logo -->
+                                <a class="navbar-brand" href="https://shoptriangle.in/admin/dashboard" aria-label="">
+                    <img class="navbar-brand-logo" style="max-height: 42px;"
+                         onerror="this.src='https://shoptriangle.in/public/assets/front-end/img/image-place-holder.png'"
+                         src="https://shoptriangle.in/storage/app/public/company/2022-09-28-6334018a147b5.png" alt="Logo">
+                    <img class="navbar-brand-logo-mini" style="max-height: 42px;"
+                         onerror="this.src='https://shoptriangle.in/public/assets/front-end/img/image-place-holder.png'"
+                         src="https://shoptriangle.in/storage/app/public/company/2022-09-28-6334018a147b5.png"
+                         alt="Logo">
+                </a>
+                <!-- End Logo -->
+            </div>
+
+            <div class="navbar-nav-wrap-content-left">
+                <!-- Navbar Vertical Toggle -->
+                <button type="button" class="js-navbar-vertical-aside-toggle-invoker close mr-3" style="color:white">
+                    <i class="tio-first-page navbar-vertical-aside-toggle-short-align" data-toggle="tooltip"
+                       data-placement="right" title="Collapse"></i>
+                    <i class="tio-last-page navbar-vertical-aside-toggle-full-align"
+                       data-template='<div class="tooltip d-none d-sm-block" role="tooltip"><div class="arrow"></div><div class="tooltip-inner"></div></div>'
+                       data-toggle="tooltip" data-placement="right" title="Expand"></i>
+                </button>
+                <!-- End Navbar Vertical Toggle -->
+                <div class="d-none d-md-block">
+                    <form class="position-relative">
+                        <!-- Input Group -->
+                        <div
+                            class="input-group input-group-merge input-group-borderless input-group-hover-light navbar-input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <i class="tio-search"></i>
+                                </div>
+                            </div>
+                            <input type="search" class="js-form-search form-control" id="search-bar-input"
+                                   placeholder="Search" aria-label="Search in front">
+                            <div class="input-group">
+                                <diV class="card" id="search-card"
+                                     style="position: absolute;background: white;z-index: 999;width: 100%;display: none; text-align: left">
+                                    <div class="card-body" id="search-result-box"
+                                         style="overflow:scroll; height:400px;overflow-x: hidden">
+
+                                    </div>
+                                </diV>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+
+            <!-- Secondary Content -->
+            <div class="navbar-nav-wrap-content-right"
+                 style="margin-right:unset; margin-left: auto">
+                <!-- Navbar -->
+                <ul class="navbar-nav align-items-center flex-row" style="color:white">
+
+                    <li class="nav-item d-none d-sm-inline-block">
+                        <div class="hs-unfold">
+                            <div style="background:white;padding: 2px;border-radius: 5px;">
+                                                                                                <div
+                                    class="topbar-text dropdown disable-autohide m-1 text-capitalize">
+                                    <a class="topbar-link dropdown-toggle" href="#" data-toggle="dropdown" style="color: black!important;">
+                                                                                                                                    <img class="mr-2"
+                                                     width="20"
+                                                     src="https://shoptriangle.in/public/assets/front-end/img/flags/en.png"
+                                                     alt="Eng">
+                                                english
+                                                                                                                        </a>
+                                    <ul class="dropdown-menu">
+                                                                                                                                    <li>
+                                                    <a class="dropdown-item pb-1"
+                                                       href="https://shoptriangle.in/lang/en">
+                                                        <img
+                                                            class="mr-2"
+                                                            width="20"
+                                                            src="https://shoptriangle.in/public/assets/front-end/img/flags/en.png"
+                                                            alt="english"/>
+                                                        <span style="text-transform: capitalize">english</span>
+                                                    </a>
+                                                </li>
+                                                                                                                        </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="nav-item d-none d-sm-inline-block" >
+                        <div class="hs-unfold">
+                            <a title="Website home"
+                               class="js-hs-unfold-invoker btn btn-icon btn-ghost-secondary rounded-circle"
+                               href="https://shoptriangle.in" style="color:white" target="_blank">
+                                <i class="tio-globe"></i>
+                                
+                            </a>
+                        </div>
+                    </li>
+
+                                        <li class="nav-item d-none d-sm-inline-block">
+                        <!-- Notification -->
+                        <div class="hs-unfold">
+                            <a class="js-hs-unfold-invoker btn btn-icon btn-ghost-secondary rounded-circle"
+                               href="https://shoptriangle.in/admin/contact/list" style="color:white">
+                                <i class="tio-email"></i>
+                                                                                                    <span class="btn-status btn-status-danger">16</span>
+                                                            </a>
+                        </div>
+                        <!-- End Notification -->
+                    </li>
+                    
+                                        <li class="nav-item d-none d-sm-inline-block">
+                        <!-- Notification -->
+                        <div class="hs-unfold">
+                            <a class="js-hs-unfold-invoker btn btn-icon btn-ghost-secondary rounded-circle"
+                               href="https://shoptriangle.in/admin/orders/list/pending" style="color:white">
+                                <i class="tio-shopping-cart-outlined"></i>
+                                
+                            </a>
+                        </div>
+                        <!-- End Notification -->
+                    </li>
+                    
+                    <li class="nav-item view-web-site-info">
+                        <div class="hs-unfold" >
+                            <a style="background-color: rgb(255, 255, 255)" onclick="openInfoWeb()" href="javascript:" class="js-hs-unfold-invoker btn btn-icon btn-ghost-secondary rounded-circle">
+                                <i class="tio-info"></i>
+                            </a>
+                        </div>
+                    </li>
+
+                    
+
+                    <li class="nav-item">
+                        <!-- Account -->
+                        <div class="hs-unfold">
+                            <a class="js-hs-unfold-invoker navbar-dropdown-account-wrapper" href="javascript:;"
+                               data-hs-unfold-options='{
+                                     "target": "#accountNavbarDropdown",
+                                     "type": "css-animation"
+                                   }'>
+                                <div class="avatar avatar-sm avatar-circle">
+                                    <img class="avatar-img"
+                                         onerror="this.src='https://shoptriangle.in/public/assets/front-end/img/image-place-holder.png'"
+                                         src="https://shoptriangle.in/storage/app/public/admin/def.png"
+                                         alt="Image Description">
+                                    <span class="avatar-status avatar-sm-status avatar-status-success"></span>
+                                </div>
+                            </a>
+
+                            <div id="accountNavbarDropdown"
+                                 class="hs-unfold-content dropdown-unfold dropdown-menu dropdown-menu-right navbar-dropdown-menu navbar-dropdown-account"
+                                 style="width: 16rem;">
+                                <div class="dropdown-item-text">
+                                    <div class="media align-items-center text-break">
+                                        <div class="avatar avatar-sm avatar-circle mr-2">
+                                            <img class="avatar-img"
+                                                 onerror="this.src='https://shoptriangle.in/public/assets/front-end/img/image-place-holder.png'"
+                                                 src="https://shoptriangle.in/storage/app/public/admin/def.png"
+                                                 alt="Image Description">
+                                        </div>
+                                        <div class="media-body">
+                                            <span class="card-title h5"></span>
+                                            <span class="card-text">admin@codes.com</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="dropdown-divider"></div>
+
+                                <a class="dropdown-item"
+                                   href="https://shoptriangle.in/admin/profile/update/1">
+                                    <span class="text-truncate pr-2" title="Settings">Settings</span>
+                                </a>
+
+                                <div class="dropdown-divider"></div>
+
+                                <a class="dropdown-item" href="javascript:" onclick="Swal.fire({
+                                    title: 'Do you want to logout?',
+                                    showDenyButton: true,
+                                    showCancelButton: true,
+                                    confirmButtonColor: '#377dff',
+                                    cancelButtonColor: '#363636',
+                                    confirmButtonText: `Yes`,
+                                    denyButtonText: `Don't Logout`,
+                                    }).then((result) => {
+                                    if (result.value) {
+                                    location.href='https://shoptriangle.in/admin/auth/logout';
+                                    } else{
+                                    Swal.fire('Canceled', '', 'info')
+                                    }
+                                    })">
+                                    <span class="text-truncate pr-2" title="Sign out">Sign out</span>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- End Account -->
+                    </li>
+                </ul>
+                <!-- End Navbar -->
+            </div>
+            <!-- End Secondary Content -->
+        </div>
+        <div id="website_info" style="display:none;background-color:rgb(165, 164, 164);width:100%;border-radius:0px 0px 5px 5px;">
+            <div style="padding: 20px;">
+                <div style="background:white;padding: 2px;border-radius: 5px;">
+                                                            <div
+                        class="topbar-text dropdown disable-autohide m-1 text-capitalize">
+                        <a class="topbar-link dropdown-toggle" href="#" data-toggle="dropdown" style="color: black!important;">
+                                                                                                <img class="mr-2"
+                                         width="20"
+                                         src="https://shoptriangle.in/public/assets/front-end/img/flags/en.png"
+                                         alt="Eng">
+                                    english
+                                                                                    </a>
+                        <ul class="dropdown-menu">
+                                                                                                <li>
+                                        <a class="dropdown-item pb-1"
+                                           href="https://shoptriangle.in/lang/en">
+                                            <img
+                                                class="mr-2"
+                                                width="20"
+                                                src="https://shoptriangle.in/public/assets/front-end/img/flags/en.png"
+                                                alt="english"/>
+                                            <span style="text-transform: capitalize">english</span>
+                                        </a>
+                                    </li>
+                                                                                    </ul>
+                    </div>
+                </div>
+                <div style="background:white;padding: 2px;border-radius: 5px;margin-top:10px;">
+                    <a title="Website home" class="p-2"
+                        href="https://shoptriangle.in" target="_blank">
+                        <i class="tio-globe"></i>
+                        
+                        View website
+                    </a>
+                </div>
+                                    <div style="background:white;padding: 2px;border-radius: 5px;margin-top:10px;">
+                        <a class="p-2"
+                            href="https://shoptriangle.in/admin/contact/list">
+                            <i class="tio-email"></i>
+                            Message
+                                                                                        <span class="">(16)</span>
+                                                    </a>
+                    </div>
+                                                    
+                        <div style="background:white;padding: 2px;border-radius: 5px;margin-top:10px;">
+                            <a class="p-2"
+                               href="https://shoptriangle.in/admin/orders/list/pending">
+                                <i class="tio-shopping-cart-outlined"></i>
+                                Order list
+                            </a>
+                        </div>
+                        
+                                </div>
+        </div>
+    </header>
+</div>
+<div id="headerFluid" class="d-none"></div>
+<div id="headerDouble" class="d-none"></div>
+
+<style>
+    .navbar-vertical .nav-link {
+        color: #041562;
+        /* font-weight: bold; */
+    }
+
+    .navbar .nav-link:hover {
+        color: #041562;
+    }
+
+    .navbar .active > .nav-link, .navbar .nav-link.active, .navbar .nav-link.show, .navbar .show > .nav-link {
+        color: #F14A16;
+    }
+
+    .navbar-vertical .active .nav-indicator-icon, .navbar-vertical .nav-link:hover .nav-indicator-icon, .navbar-vertical .show > .nav-link > .nav-indicator-icon {
+        color: #F14A16;
+    }
+
+    .nav-subtitle {
+        display: block;
+        color: #041562;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: .03125rem;
+    }
+
+    .side-logo {
+        background-color: #ffffff;
+    }
+
+    .nav-sub {
+        background-color: #ffffff!important;
+    }
+
+    
+</style>
+
+
+
+
+
+
+<!-- END ONLY DEV -->
+
+<main id="content" role="main" class="main pointer-event" >
+    <!-- Content -->
+    <div class="content container-fluid">
+        
+
+        <div class="row" style="margin-top: 20px">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="row justify-content-between pl-4 pr-4">
+                            <div>
+                                <h2>About Us</h2>
+                            </div>
+                        </div>
+                    </div>
+
+                    <form action="{% url 'updateaboutus'%}" method="post">
+                        {% csrf_token %}
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <label for="editor"></label>
+                                    {% for n in abc %}
+                                    <textarea class="form-control" id="editor" name="about">{{n.about}}</textarea>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <input class="form-control btn-primary" type="submit" name="btn">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- End Content -->
+
+
+<!-- End Footer -->
+
+
+</main>
+<!-- ========== END MAIN CONTENT ========== -->
+
+<!-- ========== END SECONDARY CONTENTS ========== -->
+<script src="https://shoptriangle.in/public/assets/back-end/js/custom.js"></script>
+<!-- JS Implementing Plugins -->
+
+
+
+<!-- JS Front -->
+<script src="https://shoptriangle.in/public/assets/back-end/js/vendor.min.js"></script>
+<script src="https://shoptriangle.in/public/assets/back-end/js/theme.min.js"></script>
+<script src="https://shoptriangle.in/public/assets/back-end/js/sweet_alert.js"></script>
+<script src="https://shoptriangle.in/public/assets/back-end/js/toastr.js"></script>
+<script type="text/javascript"></script>
+
+<!-- JS Plugins Init. -->
+<script>
+
+    $(document).on('ready', function () {
+        // ONLY DEV
+        // =======================================================
+        if (window.localStorage.getItem('hs-builder-popover') === null) {
+            $('#builderPopover').popover('show')
+                .on('shown.bs.popover', function () {
+                    $('.popover').last().addClass('popover-dark')
+                });
+
+            $(document).on('click', '#closeBuilderPopover', function () {
+                window.localStorage.setItem('hs-builder-popover', true);
+                $('#builderPopover').popover('dispose');
+            });
+        } else {
+            $('#builderPopover').on('show.bs.popover', function () {
+                return false
+            });
+        }
+        // END ONLY DEV
+        // =======================================================
+
+        // BUILDER TOGGLE INVOKER
+        // =======================================================
+        $('.js-navbar-vertical-aside-toggle-invoker').click(function () {
+            $('.js-navbar-vertical-aside-toggle-invoker i').tooltip('hide');
+        });
+
+        // INITIALIZATION OF MEGA MENU
+        // =======================================================
+        /*var megaMenu = new HSMegaMenu($('.js-mega-menu'), {
+            desktop: {
+                position: 'left'
+            }
+        }).init();*/
+
+
+        // INITIALIZATION OF NAVBAR VERTICAL NAVIGATION
+        // =======================================================
+        var sidebar = $('.js-navbar-vertical-aside').hsSideNav();
+
+
+        // INITIALIZATION OF TOOLTIP IN NAVBAR VERTICAL MENU
+        // =======================================================
+        $('.js-nav-tooltip-link').tooltip({boundary: 'window'})
+
+        $(".js-nav-tooltip-link").on("show.bs.tooltip", function (e) {
+            if (!$("body").hasClass("navbar-vertical-aside-mini-mode")) {
+                return false;
+            }
+        });
+
+
+        // INITIALIZATION OF UNFOLD
+        // =======================================================
+        $('.js-hs-unfold-invoker').each(function () {
+            var unfold = new HSUnfold($(this)).init();
+        });
+
+
+        // INITIALIZATION OF FORM SEARCH
+        // =======================================================
+        $('.js-form-search').each(function () {
+            new HSFormSearch($(this)).init()
+        });
+
+
+        // INITIALIZATION OF SELECT2
+        // =======================================================
+        $('.js-select2-custom').each(function () {
+            var select2 = $.HSCore.components.HSSelect2.init($(this));
+        });
+
+
+        // INITIALIZATION OF DATERANGEPICKER
+        // =======================================================
+        $('.js-daterangepicker').daterangepicker();
+
+        $('.js-daterangepicker-times').daterangepicker({
+            timePicker: true,
+            startDate: moment().startOf('hour'),
+            endDate: moment().startOf('hour').add(32, 'hour'),
+            locale: {
+                format: 'M/DD hh:mm A'
+            }
+        });
+
+        var start = moment();
+        var end = moment();
+
+        function cb(start, end) {
+            $('#js-daterangepicker-predefined .js-daterangepicker-predefined-preview').html(start.format('MMM D') + ' - ' + end.format('MMM D, YYYY'));
+        }
+
+        $('#js-daterangepicker-predefined').daterangepicker({
+            startDate: start,
+            endDate: end,
+            ranges: {
+                'Today': [moment(), moment()],
+                'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+                'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+                'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+                'This Month': [moment().startOf('month'), moment().endOf('month')],
+                'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+            }
+        }, cb);
+
+        cb(start, end);
+
+
+        // INITIALIZATION OF CLIPBOARD
+        // =======================================================
+        $('.js-clipboard').each(function () {
+            var clipboard = $.HSCore.components.HSClipboard.init(this);
+        });
+    });
+</script>
+<script>
+    function openInfoWeb()
+    {
+        var x = document.getElementById("website_info");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
+</script>
+    
+    <script src="https://shoptriangle.in/vendor/ckeditor/ckeditor/ckeditor.js"></script>
+    <script src="https://shoptriangle.in/vendor/ckeditor/ckeditor/adapters/jquery.js"></script>
+    <script>
+        $('#editor').ckeditor({
+            contentsLangDirection : 'ltr',
+        });
+    </script>
+    
+
+
+<script src="https://shoptriangle.in/public/assets/back-end/js/bootstrap.min.js"></script>
+
+<script src="https://shoptriangle.in/public/js/lightbox.min.js"></script>
+<audio id="myAudio">
+    <source src="https://shoptriangle.in/public/assets/back-end/sound/notification.mp3" type="audio/mpeg">
+</audio>
+<script>
+    var audio = document.getElementById("myAudio");
+
+    function playAudio() {
+        audio.play();
+    }
+
+    function pauseAudio() {
+        audio.pause();
+    }
+</script>
+<script>
+            setInterval(function () {
+            $.get({
+                url: 'https://shoptriangle.in/admin/get-order-data',
+                dataType: 'json',
+                success: function (response) {
+                    let data = response.data;
+                    if (data.new_order > 0) {
+                        playAudio();
+                        $('#popup-modal').appendTo("body").modal('show');
+                    }
+                },
+            });
+        }, 10000);
+    
+    function check_order() {
+        location.href = 'https://shoptriangle.in/admin/orders/list/all';
+    }
+</script>
+<script>
+    $("#search-bar-input").keyup(function () {
+        $("#search-card").css("display", "block");
+        let key = $("#search-bar-input").val();
+        if (key.length > 0) {
+            $.get({
+                url: 'https://shoptriangle.in/admin/search-function/',
+                dataType: 'json',
+                data: {
+                    key: key
+                },
+                beforeSend: function () {
+                    $('#loading').show();
+                },
+                success: function (data) {
+                    $('#search-result-box').empty().html(data.result)
+                },
+                complete: function () {
+                    $('#loading').hide();
+                },
+            });
+        } else {
+            $('#search-result-box').empty();
+        }
+    });
+
+    $(document).mouseup(function (e) {
+        var container = $("#search-card");
+        if (!container.is(e.target) && container.has(e.target).length === 0) {
+            container.hide();
+        }
+    });
+
+    function form_alert(id, message) {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: message,
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            cancelButtonText: 'No',
+            confirmButtonText: 'Yes',
+            reverseButtons: true
+        }).then((result) => {
+            if (result.value) {
+                $('#' + id).submit()
+            }
+        })
+    }
+</script>
+
+<script>
+    function call_demo() {
+        toastr.info('Update option is disabled for demo!', {
+            CloseButton: true,
+            ProgressBar: true
+        });
+    }
+</script>
+
+<!-- IE Support -->
+<script>
+    if (/MSIE \d|Trident.*rv:/.test(navigator.userAgent)) document.write('<script src="https://shoptriangle.in/public/assets/back-end/vendor/babel-polyfill/polyfill.min.js"><\/script>');
+</script>
+
+<!-- ck editor -->
+
+<!-- ck editor -->
+
+<script>
+    initSample();
+</script>
+
+<script>
+
+</script>
+<script>
+    function getRndInteger() {
+        return Math.floor(Math.random() * 90000) + 100000;
+    }
+</script>
+
+</body>
+</html>
